@@ -1,8 +1,9 @@
 # Ini guide buat bikin komponennya
 ## Buat install
-1. clone repo
-2. npm install
-3. npm run dev (buat jalanin webnya)
+1. install node kalo belom, vernya kalo mau aman 14.17.5
+2. clone repo
+3. npm install
+4. npm run dev (buat jalanin webnya)
 ## Buat bikin
 - Folder layout buat komponen yg diulang2 di tiap page, contoh header footer
 - Folder pages buat page-page yg ada, masing-masing link berarti 1 file, contoh nanti bikin Login page buat /login
