@@ -8,7 +8,7 @@ class AccountService {
         return http.post("/signup", data)
     }
     getByUsername(username) {
-        return http.get(`/username/${username}`);
+        return http.get(`/user/${username}`);
     }
     updatePlate(username, data) {
         return http.put(`/plates/${username}`, data);
