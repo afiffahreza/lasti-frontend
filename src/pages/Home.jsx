@@ -1,12 +1,12 @@
 import { Container, Grid, ListItem, Typography } from "@mui/material"
 import { Box } from "@mui/system"
 import React from "react"
-import Header from "../layout/Header"
+import HeaderHome from "../layout/HeaderHome"
 
 const Home = () => {
     return (
         <div>
-            <Header/>
+            <HeaderHome/>
             <Container maxWidth='lg' style={{marginTop: '20px'}}>
                 <Box sx={{ flexGrow: 1 }, {border: 1}, {bgcolor: "#B4C6A6"}}> 
                     <Grid container spacing={1} style={{margin: "auto"}}>

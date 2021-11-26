@@ -1,0 +1,21 @@
+import http from "../http-common";
+
+class AccountService {
+    login(data) {
+        return http.post("/login", data)
+    }
+    signup(data) {
+        return http.post("/signup", data)
+    }
+    getByUsername(username) {
+        return http.get(`/username/${username}`);
+    }
+    updatePlate(username, data) {
+        return http.put(`/plates/${username}`, data);
+    }
+    updateMoney(username, data) {
+        return http.put(`/money/${username}`, data);
+    }
+}
+
+export default new AccountService();
