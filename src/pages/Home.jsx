@@ -72,12 +72,12 @@ const Home = () => {
                             Belum ada plat nomor tersimpan
                             </div>
                         ) : user.plates.map((plate,index) => (
-                            <ListItem key={index}>
+                            <ListItem divider key={index}>
                                 {plate}
                             </ListItem>
                         ))}   
                     </List>
-                    <Button variant="contained" color="success" style={{margin:"20px"}}>Tambah Plat</Button>
+                    <Button variant="contained" color="success" style={{margin:"20px"}} href='/plates'>Tambah Plat</Button>
                 </Box>
                 <br/>
             </Container>
