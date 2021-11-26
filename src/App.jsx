@@ -7,6 +7,7 @@ import Signup from './pages/signup'
 import IsiWallet from './pages/IsiWallet'
 import TollCalculator from './pages/Toll Calculator'
 import Home from './pages/Home'
+import Plates from './pages/Plates'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,6 +19,7 @@ function App() {
         <Route exact path={["/signup"]} component={Signup}/>
         <Route exact path={["/", "/login"]} component={Login}/>
         <Route exact path={["/wallet"]} component={IsiWallet}/>
+        <Route exact path={["/plates"]} component={Plates}/>
         <Route exact path={["/toll-calculator"]} component={TollCalculator}/>
       </Switch>
     </div>
