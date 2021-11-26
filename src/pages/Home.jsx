@@ -37,7 +37,7 @@ const Home = () => {
                         </Grid>
                         <Grid item xs={6} md={7}>
                             <ListItem>{user.username}</ListItem>
-                            <ListItem>{user.money}</ListItem>
+                            <ListItem>Rp {user.money}</ListItem>
                             <br/>
                         </Grid>
                         <Grid item xs={6} md={3}>

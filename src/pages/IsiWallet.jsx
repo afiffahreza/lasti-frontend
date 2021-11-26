@@ -12,8 +12,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Text, StyleSheet } from "react";
+import AccountService from '../services/account'
 
 const MetodePembayaran = [
     {
@@ -37,6 +38,8 @@ const MetodePembayaran = [
 const IsiWallet = () => {
     const [Metode, setMetode] = React.useState('');
     const [Total, setTotal] = React.useState(0);
+    const [saldo, setSaldo] = useState(0)
+    const [submitted, setSubmitted] = useState(false)
 
     const handleChangeMetode = (event) => {
     setMetode(event.target.value);
@@ -44,6 +47,25 @@ const IsiWallet = () => {
     const handleChangeTotal = (event) => {
     setTotal(event.target.value);
     };
+
+    useEffect(() => {
+        AccountService.getByUsername(sessionStorage.getItem('username'))
+        .then( response => {
+            setSaldo(response.data.money)
+        })
+    }, [])
+
+    const handleSubmit = (event) => {
+        const newbal = Number(saldo) + Number(Total)
+        console.log(newbal)
+        const data = {
+            money: newbal
+        }
+        AccountService.updateMoney(sessionStorage.getItem('username'), data).then(response => {
+            console.log(response)
+            setSubmitted(true)
+        })
+    }
 
     return (
         <><div className="body3">
@@ -63,7 +85,7 @@ const IsiWallet = () => {
                     <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
                         Isi Ulang Dompetmu Sebelum Pergi! <br></br>
                         <br></br>
-                        Isi Saldomu Sekarang: Rp. 53,700.00
+                        Isi Saldomu Sekarang: Rp{saldo}
                         <br></br>
                     </Typography>
                 </div>
@@ -83,9 +105,20 @@ const IsiWallet = () => {
                     </TextField>
                 </div>
                 <div sx={{ display: "flex", justifyContent: 'flex-end'}}>
-                    <Button variant="contained" sx={{width:450}} href='./home' disabled={Total<1 || Metode === ''}>Top-Up</Button>
+                    <Button variant="contained" sx={{width:450}} onClick={handleSubmit} disabled={Total<1 || Metode === '' || submitted}>Top-Up</Button>
                 </div>
                 <div><br/></div>
+                {submitted ? (
+                    <div>
+                        <Typography variant="h7" style={{marginLeft: "30px"}}>
+                            Wallet berhasil ditambahkan
+                        </Typography>
+                        <br/>
+                        <br/>
+                    </div>
+                ) : (
+                    <div></div>
+                )}
 
             </Box>
             </Container>
