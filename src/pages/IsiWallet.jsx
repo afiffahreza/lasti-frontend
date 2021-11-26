@@ -36,11 +36,15 @@ const MetodePembayaran = [
 
 const IsiWallet = () => {
     const [Metode, setMetode] = React.useState('');
+    const [Total, setTotal] = React.useState(0);
 
-    const handleChange = (event) => {
+    const handleChangeMetode = (event) => {
     setMetode(event.target.value);
     };
-    
+    const handleChangeTotal = (event) => {
+    setTotal(event.target.value);
+    };
+
     return (
         <><div>
             <Header />
@@ -66,9 +70,9 @@ const IsiWallet = () => {
                         <br></br>
                     </Typography>
                     <TextField id="Jumlah-basic" label="Jumlah Uang" variant="outlined" helperText="Satuan Rupiah, jangan pakai tanda titik/koma"
-                    type="number" min="1" required/>
+                    type="number" min="1" required value={Total} onChange={handleChangeTotal}/>
                     <TextField id="MetodePembayaran-basic" label="Metode Pembayaran" variant="outlined"
-                        select value={Metode} onChange={handleChange} helperText="Pilih Metode Pembayaran" required >
+                        select value={Metode} onChange={handleChangeMetode} helperText="Pilih Metode Pembayaran" required >
                         {MetodePembayaran.map((option) => (
                             <MenuItem key={option.value} value={option.value}>
                                 {option.label}
@@ -77,7 +81,7 @@ const IsiWallet = () => {
                     </TextField>
                 </div>
                 <div style={{position:'absolute', top:340, left:20}}>
-                    <Button variant="contained" sx={{width:450} }>Top-Up</Button>
+                    <Button variant="contained" sx={{width:450}} href='./home' disabled={Total<1 || Metode === ''}>Top-Up</Button>
                 </div>
             </Box></>
     )
