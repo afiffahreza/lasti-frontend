@@ -151,52 +151,54 @@ class TollCalculator extends React.Component {
       <div>
         <Header/>
         <center>
-          <div>
-            <FormControl sx={{ m: 1, width: 400, mt: 10 }}>
-              <InputLabel htmlFor="road-select">Road</InputLabel>
-              <Select native defaultValue="" id="road-select" label="Road" value={this.state.selectedRoad} onChange={this.changeRoad}>
-                <option aria-label="None" value="" />
-                {this.state.roads.map((e, key) => {
-    							return <option key={key}>{e.name}</option>;
-    						})}
-              </Select>
-            </FormControl>
-          </div>
-          <div>
-            <FormControl sx={{ m: 1, width: 400 }}>
-              <InputLabel htmlFor="entrance-select">Entrance</InputLabel>
-              <Select native defaultValue="" id="entrance-select" label="Entrance" value={this.state.selectedEntrance} onChange={this.changeEntrance}>
-                <option aria-label="None" value="" />
-                {this.state.entrances.map((e, key) => {
-    							return <option key={key}>{e.name}</option>;
-    						})}
-              </Select>
-            </FormControl>
-          </div>
-          <div>
-            <FormControl sx={{ m: 1, width: 400 }}>
-              <InputLabel htmlFor="exit-select">Exit</InputLabel>
-              <Select native defaultValue="" id="exit-select" label="Exit" value={this.state.selectedExit} onChange={this.changeExit}>
-                <option aria-label="None" value="" />
-                {this.state.exits.map((e, key) => {
-    							return <option key={key}>{e.name}</option>;
-    						})}
-              </Select>
-            </FormControl>
-          </div>
-          <div>
-            <Stack spacing={2} m={1} width={400}>
-              <Button variant="outlined" onClick={this.toggleDialog}>Tampilkan Tarif Tol</Button>
-            </Stack>
-            <Dialog isOpen={this.state.isDialogOpen} onClose={this.toggleDialog}>
-              <div>
-                <p>{entranceMessage}</p>
-                <p>{exitMessage}</p>
-                {this.state.rates.map((e, key) => {
-                  return <p key={key}>{e}</p>;
-                })}
-              </div>
-            </Dialog>
+          <div class="container">
+            <div>
+              <FormControl sx={{ m: 1, width: 400, mt: 2 }}>
+                <InputLabel htmlFor="road-select">Road</InputLabel>
+                <Select native defaultValue="" id="road-select" label="Road" value={this.state.selectedRoad} onChange={this.changeRoad}>
+                  <option aria-label="None" value="" />
+                  {this.state.roads.map((e, key) => {
+      							return <option key={key}>{e.name}</option>;
+      						})}
+                </Select>
+              </FormControl>
+            </div>
+            <div>
+              <FormControl sx={{ m: 1, width: 400 }}>
+                <InputLabel htmlFor="entrance-select">Entrance</InputLabel>
+                <Select native defaultValue="" id="entrance-select" label="Entrance" value={this.state.selectedEntrance} onChange={this.changeEntrance}>
+                  <option aria-label="None" value="" />
+                  {this.state.entrances.map((e, key) => {
+      							return <option key={key}>{e.name}</option>;
+      						})}
+                </Select>
+              </FormControl>
+            </div>
+            <div>
+              <FormControl sx={{ m: 1, width: 400 }}>
+                <InputLabel htmlFor="exit-select">Exit</InputLabel>
+                <Select native defaultValue="" id="exit-select" label="Exit" value={this.state.selectedExit} onChange={this.changeExit}>
+                  <option aria-label="None" value="" />
+                  {this.state.exits.map((e, key) => {
+      							return <option key={key}>{e.name}</option>;
+      						})}
+                </Select>
+              </FormControl>
+            </div>
+            <div>
+              <Stack spacing={2} m={1} width={400}>
+                <Button variant="outlined" onClick={this.toggleDialog}>Tampilkan Tarif Tol</Button>
+              </Stack>
+              <Dialog isOpen={this.state.isDialogOpen} onClose={this.toggleDialog}>
+                <div>
+                  <p>{entranceMessage}</p>
+                  <p>{exitMessage}</p>
+                  {this.state.rates.map((e, key) => {
+                    return <p key={key}>{e}</p>;
+                  })}
+                </div>
+              </Dialog>
+            </div>
           </div>
         </center>
       </div>

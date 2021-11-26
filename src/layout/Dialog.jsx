@@ -10,7 +10,7 @@ class Dialog extends React.Component {
     const BackgroundStyle = {
       backgroundColor: "rgba(220,220,220,0.5)",
       position: "fixed",
-      top: 100,
+      top: 0,
       right: 0,
       bottom: 0,
       left: 0
