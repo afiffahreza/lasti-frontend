@@ -1,10 +1,10 @@
 import React from "react"
-import Header from "../layout/Header"
+import HeaderLogin from "../layout/HeaderLogin"
 
 const Home = () => {
     return (
         <div>
-            <Header/>
+            <HeaderLogin/>
             Test
         </div>
     )

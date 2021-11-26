@@ -1,4 +1,4 @@
-body {
+.body1 {
     --color-primary: #009579;
     --color-primary-dark: #007f67;
     --color-secondary: #252c6a;
@@ -85,13 +85,13 @@ body {
 
 .form__input--error {
     color: var(--color-error);
-    border-color: var(--color-error)
+    border-color: var(--color-error);
 }
 
 .form__input-error-message {
     margin-top: 0.5rem;
     font-size: 0.85rem;
-    color: var(--color-error)
+    color: var(--color-error);
 }
 
 .form__button {
@@ -119,7 +119,7 @@ body {
     text-align: center;
 }
 
-.form__link{
+.form__link {
     color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
