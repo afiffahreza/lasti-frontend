@@ -200,13 +200,18 @@ class TollCalculator extends React.Component {
                   <Stack spacing={2} m={1} width={400}>
                     <Button variant="outlined" onClick={this.toggleDialog}>Tampilkan Tarif Tol</Button>
                   </Stack>
-                  <Dialog isOpen={this.state.isDialogOpen} onClose={this.toggleDialog}>
+                  <Dialog isOpen={this.state.isDialogOpen} onClose={this.toggleDialog} styles={{position: "absolute", top: 250}}>
                     <div>
                       <p>{entranceMessage}</p>
                       <p>{exitMessage}</p>
                       {this.state.rates.map((e, key) => {
                         return <p key={key}>{e}</p>;
                       })}
+                      <p>Jumlah kendaraan di tol {this.state.selectedRoad} saat ini: 1100</p>
+                      <p>Estimasi waktu tempuh saat ini: 68 menit</p>
+                      <p>Estimasi waktu tempuh 2 jam lagi: 80 menit</p>
+                      <p>Estimasi waktu tempuh 4 jam lagi: 64 menit</p>
+                      <p>Estimasi waktu tempuh 8 jam lagi: 60 menit</p>
                     </div>
                   </Dialog>
                 </div>
