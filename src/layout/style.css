@@ -16,8 +16,15 @@
     background-size: cover;
 }
 
-.box{
-    background:#ffffff
+.body2 {
+    background: url(./background-5.jpg);
+    background-size: cover;
+    height: 100vh;
+}
+
+.box {
+    background: #ffffff;
+    background-size: cover;
 }
 
 .container {
