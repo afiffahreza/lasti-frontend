@@ -17,7 +17,7 @@ class Dialog extends React.Component {
     };
 
     const DialogStyle = {
-      minWidth: 500,
+      minWidth: 1500,
       minHeight: 200,
       backgroundColor: "#fff",
       margin: "auto",
@@ -32,7 +32,7 @@ class Dialog extends React.Component {
 
     return (
       <div style={{top: '50%', left: '50%', position: 'absolute'}}>
-      <div style={BackgroundStyle, {position: "relative", width: '600px', marginLeft:'-300px', height: '600px', marginTop:'-100px'}}>
+      <div style={BackgroundStyle, {position: "relative", width: '600px', marginLeft:'-900px', height: '600px', marginTop:'-250px'}}>
         <div style={DialogStyle}>
           <span style={CloseBtnStyle} onClick={this.props.onClose}>
             x
