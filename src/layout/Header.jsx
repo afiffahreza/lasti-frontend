@@ -13,7 +13,7 @@ const Header = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 JasaMarga Toll Service
             </Typography>
-            <Button color="inherit">Home</Button>
+            <Button color="inherit" href='/home'>Log Out</Button>
             </Toolbar>
         </AppBar>
         </Box>

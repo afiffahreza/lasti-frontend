@@ -10,7 +10,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 const Header = () => {
     return (
         <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <AppBar position="static" style={{ background: '#009579' }}>
             <Toolbar>
             <IconButton
                 size="large"
@@ -24,7 +24,7 @@ const Header = () => {
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 Top-Up Saldo Dompet
             </Typography>
-            <Button color="inherit">Login</Button>
+            <Button color="inherit">Home</Button>
             </Toolbar>
         </AppBar>
         </Box>

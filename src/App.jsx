@@ -14,9 +14,9 @@ function App() {
   return (
     <div>
       <Switch>
-        <Route exact path={["/"]} component={Home}/>
+        <Route exact path={["/home"]} component={Home}/>
         <Route exact path={["/signup"]} component={Signup}/>
-        <Route exact path={["/login"]} component={Login}/>
+        <Route exact path={["/", "/login"]} component={Login}/>
         <Route exact path={["/wallet"]} component={IsiWallet}/>
         <Route exact path={["/toll-calculator"]} component={TollCalculator}/>
       </Switch>
