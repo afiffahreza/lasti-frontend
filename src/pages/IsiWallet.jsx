@@ -46,12 +46,14 @@ const IsiWallet = () => {
     };
 
     return (
-        <><div>
+        <><div className="body3">
             <Header />
-        </div><Box
+        <Container maxWidth='sm' style={{marginTop: '20px', background: "#B4DFA6"}}>
+        <br/>
+        <Box
             component="form"
             sx={{
-                '& .MuiTextField-root': { m: 1, width: '25ch' },
+                '& .MuiTextField-root': { m: 1, width: '50ch'},
             }}
             noValidate
             autoComplete="off"
@@ -80,10 +82,14 @@ const IsiWallet = () => {
                         ))}
                     </TextField>
                 </div>
-                <div style={{position:'absolute', top:340, left:20}}>
+                <div sx={{ display: "flex", justifyContent: 'flex-end'}}>
                     <Button variant="contained" sx={{width:450}} href='./home' disabled={Total<1 || Metode === ''}>Top-Up</Button>
                 </div>
-            </Box></>
+                <div><br/></div>
+
+            </Box>
+            </Container>
+            </div></>
     )
     }
 
