@@ -16,6 +16,10 @@ body {
     background-size: cover;
 }
 
+.box{
+    background:#ffffff
+}
+
 .container {
     width: 400px;
     max-width: 400px;

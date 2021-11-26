@@ -1,4 +1,4 @@
-import Header from "../layout/Header"
+import Header from "../layout/Header IsiWallet"
 import * as React from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,6 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react'
 import { Text, StyleSheet } from "react";
+import '../layout/style.css';
 
 const MetodePembayaran = [
     {
@@ -43,27 +44,24 @@ const IsiWallet = () => {
     return (
         <><div>
             <Header />
-        </div><Box
+        </div>
+        <div sx={{bgcolor:"#ffffff"}}><Box
             component="form"
             sx={{
                 '& .MuiTextField-root': { m: 1, width: '25ch' },
+                bgcolor:'#ffffff',
             }}
             noValidate
             autoComplete="off"
-            m={3}
         >
                 <div>
-                    <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                    <Typography variant="h5" component="div" sx={{ flexGrow: 1}} p={3}>
                         Isi Ulang Dompetmu Sebelum Pergi! <br></br>
                         <br></br>
                         Isi Saldomu Sekarang: Rp. 53,700.00
-                        <br></br>
                     </Typography>
                 </div>
                 <div>
-                    <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-                        <br></br>
-                    </Typography>
                     <TextField id="Jumlah-basic" label="Jumlah Uang" variant="outlined" helperText="Satuan Rupiah, jangan pakai tanda titik/koma" required='true' />
                     <TextField id="MetodePembayaran-basic" label="Metode Pembayaran" variant="outlined"
                         select value={Metode} onChange={handleChange} helperText="Pilih Metode Pembayaran" required='true'>
@@ -74,10 +72,16 @@ const IsiWallet = () => {
                         ))}
                     </TextField>
                 </div>
-                <div>
-                    <Button variant="contained">Top-Up</Button>
+                <div style={{ display: "flex", justifyContent: 'flex-end',padding:10 }}>
+                    <Button variant="contained" p={3}>Top-Up</Button>
                 </div>
-            </Box></>
+                <div>
+                <Typography variant="h5" component="div" sx={{ flexGrow: 1}} p={1}>
+                       <br></br>
+                    </Typography>
+                </div>
+            </Box>
+            </div></>
     )
     }
 
