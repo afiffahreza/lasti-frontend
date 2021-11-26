@@ -1,7 +1,7 @@
 import React from "react"
 import Header from "../layout/Header"
 
-const Test = () => {
+const Home = () => {
     return (
         <div>
             <Header/>
@@ -10,4 +10,4 @@ const Test = () => {
     )
 }
 
-export default Test
+export default Home

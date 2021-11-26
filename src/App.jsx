@@ -5,6 +5,7 @@ import Test from './pages/Test'
 import Login from './pages/login'
 import Signup from './pages/signup'
 import IsiWallet from './pages/IsiWallet'
+import TollCalculator from './pages/Toll Calculator'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +16,7 @@ function App() {
         <Route exact path={["/signup"]} component={Signup}/>
         <Route exact path={["/login"]} component={Login}/>
         <Route exact path={["/wallet"]} component={IsiWallet}/>
+        <Route exact path={["/toll-calculator"]} component={TollCalculator}/>
       </Switch>
     </div>
   )
