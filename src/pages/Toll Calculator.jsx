@@ -8,6 +8,8 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import Box from '@mui/material/Box';
 
 class TollCalculator extends React.Component {
   constructor(props) {
@@ -146,57 +148,70 @@ class TollCalculator extends React.Component {
     var entranceMessage = 'Gerbang Masuk: ' + this.state.selectedEntrance;
     var exitMessage = 'Gerbang Keluar: ' + this.state.selectedExit;
     return (
-      <div>
+      <div className="body3">
         <Header/>
         <center>
           <div>
-            <div>
-              <FormControl sx={{ m: 1, width: 400, mt: 10 }}>
-                <InputLabel htmlFor="road-select">Road</InputLabel>
-                <Select native defaultValue="" id="road-select" label="Road" value={this.state.selectedRoad} onChange={this.changeRoad}>
-                  <option aria-label="None" value="" />
-                  {this.state.roads.map((e, key) => {
-      							return <option key={key}>{e.name}</option>;
-      						})}
-                </Select>
-              </FormControl>
-            </div>
-            <div>
-              <FormControl sx={{ m: 1, width: 400 }}>
-                <InputLabel htmlFor="entrance-select">Entrance</InputLabel>
-                <Select native defaultValue="" id="entrance-select" label="Entrance" value={this.state.selectedEntrance} onChange={this.changeEntrance}>
-                  <option aria-label="None" value="" />
-                  {this.state.entrances.map((e, key) => {
-      							return <option key={key}>{e.name}</option>;
-      						})}
-                </Select>
-              </FormControl>
-            </div>
-            <div>
-              <FormControl sx={{ m: 1, width: 400 }}>
-                <InputLabel htmlFor="exit-select">Exit</InputLabel>
-                <Select native defaultValue="" id="exit-select" label="Exit" value={this.state.selectedExit} onChange={this.changeExit}>
-                  <option aria-label="None" value="" />
-                  {this.state.exits.map((e, key) => {
-      							return <option key={key}>{e.name}</option>;
-      						})}
-                </Select>
-              </FormControl>
-            </div>
-            <div>
-              <Stack spacing={2} m={1} width={400}>
-                <Button variant="outlined" onClick={this.toggleDialog}>Tampilkan Tarif Tol</Button>
-              </Stack>
-              <Dialog isOpen={this.state.isDialogOpen} onClose={this.toggleDialog}>
+            <Container maxWidth='md' style={{marginTop: '20px', background: "#B4DFA6"}} sx={{width: 500, height: 500}}>
+              <br/>
+              <Box
+                  component="form"
+                  sx={{
+                      '& .MuiTextField-root': { m: 1, width: '50ch'},
+                  }}
+                  noValidate
+                  autoComplete="off"
+                  m={3}
+              >
                 <div>
-                  <p>{entranceMessage}</p>
-                  <p>{exitMessage}</p>
-                  {this.state.rates.map((e, key) => {
-                    return <p key={key}>{e}</p>;
-                  })}
+                  <FormControl sx={{ m: 1, width: 400, mt: 10 }}>
+                    <InputLabel htmlFor="road-select">Road</InputLabel>
+                    <Select native defaultValue="" id="road-select" label="Road" value={this.state.selectedRoad} onChange={this.changeRoad}>
+                      <option aria-label="None" value="" />
+                      {this.state.roads.map((e, key) => {
+          							return <option key={key}>{e.name}</option>;
+          						})}
+                    </Select>
+                  </FormControl>
                 </div>
-              </Dialog>
-            </div>
+                <div>
+                  <FormControl sx={{ m: 1, width: 400 }}>
+                    <InputLabel htmlFor="entrance-select">Entrance</InputLabel>
+                    <Select native defaultValue="" id="entrance-select" label="Entrance" value={this.state.selectedEntrance} onChange={this.changeEntrance}>
+                      <option aria-label="None" value="" />
+                      {this.state.entrances.map((e, key) => {
+          							return <option key={key}>{e.name}</option>;
+          						})}
+                    </Select>
+                  </FormControl>
+                </div>
+                <div>
+                  <FormControl sx={{ m: 1, width: 400 }}>
+                    <InputLabel htmlFor="exit-select">Exit</InputLabel>
+                    <Select native defaultValue="" id="exit-select" label="Exit" value={this.state.selectedExit} onChange={this.changeExit}>
+                      <option aria-label="None" value="" />
+                      {this.state.exits.map((e, key) => {
+          							return <option key={key}>{e.name}</option>;
+          						})}
+                    </Select>
+                  </FormControl>
+                </div>
+                <div>
+                  <Stack spacing={2} m={1} width={400}>
+                    <Button variant="outlined" onClick={this.toggleDialog}>Tampilkan Tarif Tol</Button>
+                  </Stack>
+                  <Dialog isOpen={this.state.isDialogOpen} onClose={this.toggleDialog}>
+                    <div>
+                      <p>{entranceMessage}</p>
+                      <p>{exitMessage}</p>
+                      {this.state.rates.map((e, key) => {
+                        return <p key={key}>{e}</p>;
+                      })}
+                    </div>
+                  </Dialog>
+                </div>
+              </Box>
+            </Container>
           </div>
         </center>
       </div>
