@@ -149,9 +149,9 @@ class TollCalculator extends React.Component {
       <div>
         <Header/>
         <center>
-          <div class="container">
+          <div>
             <div>
-              <FormControl sx={{ m: 1, width: 400, mt: 2 }}>
+              <FormControl sx={{ m: 1, width: 400, mt: 10 }}>
                 <InputLabel htmlFor="road-select">Road</InputLabel>
                 <Select native defaultValue="" id="road-select" label="Road" value={this.state.selectedRoad} onChange={this.changeRoad}>
                   <option aria-label="None" value="" />

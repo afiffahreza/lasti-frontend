@@ -11,7 +11,6 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import './IsiWallet.css'
 import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react'
 import { Text, StyleSheet } from "react";
@@ -75,8 +74,8 @@ const IsiWallet = () => {
                         ))}
                     </TextField>
                 </div>
-                <div>
-                    <Button variant="contained">Top-Up</Button>
+                <div style={{position:'absolute', top:340, left:20}}>
+                    <Button variant="contained" sx={{width:450}}>Top-Up</Button>
                 </div>
             </Box></>
     )
