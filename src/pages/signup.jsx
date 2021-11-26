@@ -43,13 +43,13 @@ const Signup = () => {
                             <input type="text" id="signupUsername" className="form__input" autoFocus placeholder="Username" name="username" value={input.username} onChange={handleChange}/>
                         </div>
                         <div className="form__input-group">
-                            <input type="text" className="form__input" autoFocus placeholder="Email Address" />
+                            <input type="text" className="form__input" placeholder="Email Address" />
                         </div>
                         <div className="form__input-group">
-                            <input type="password" className="form__input" autoFocus placeholder="Password" name="password" value={input.password} onChange={handleChange}/>
+                            <input type="password" className="form__input" placeholder="Password" name="password" value={input.password} onChange={handleChange}/>
                         </div>
                         <div className="form__input-group">
-                            <input type="password" className="form__input" autoFocus placeholder="Confirm Password" />
+                            <input type="password" className="form__input" placeholder="Confirm Password" />
                         </div>
                     </form>
                     <br/><br/>
